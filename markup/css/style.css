@@ -1,0 +1,272 @@
+/* Resets  */
+/*helping selectors*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; 
+}
+
+
+/* main styles */
+.wrapper {
+    /* background-color: black; */
+}
+
+/* header  */
+.header {
+    background: rgba(0,0,0,0.8);
+    /* height: 44px; */
+    /* transition: height 1s ease-in-out; */
+}
+
+/* out navigation  */
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+    .list-item {
+        display: flex;
+        height: 44px;
+    }
+
+    .list-item-link {
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        opacity: 0.8;
+
+        font-size: 14px;
+        line-height: 3.14286;
+        font-weight: 300;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .list-item:hover .list-item-link {
+        opacity: 1;
+    }
+
+    
+
+
+/* burger  */
+.burger {
+    display: none;
+
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 7px 0;
+}
+
+    .burger-lines,
+    .burger-lines:before{
+        position: absolute;
+        top: 50%;
+        margin: 3px 0 0;
+        width: 18px;
+        height: 1px;
+        background-color: #FFFFFF;
+
+        /* transform: rotate(45deg); */
+        transition: .25s ease-in-out;/*бургер меню изменяется при нажатии, полоски превращаются в крестик*/
+    }
+
+    .burger-lines {
+        left: 6px;
+    }
+
+    .burger-lines:before{
+        content: '';
+        top: -10px;;
+    }
+
+
+/* in navigation */
+.nav {
+    display: none;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-top: 1px solid #424245;
+    /* background: rgba(0,0,0,0.8); */
+} 
+
+    .nav-item {
+        display: flex;
+        height: 44px;
+        border-bottom: 1px solid #424245;
+
+        transition: opacity 1s ease-in-out 1s;/*свойство, время, скорость, время начала-для анимации*/
+    }
+
+    .nav-item:last-child {
+        border-bottom: 0;
+    } 
+
+    .nav-item-link {
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: flex-start;
+        height: 44px;
+        width: 100%;
+        opacity: 0.8;
+
+        font-size: 17px;
+        line-height: 1.23536;
+        font-weight: 300;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .nav-item:hover .nav-item-link {
+        opacity: 1;
+    }
+
+
+
+
+/* tablet  */
+@media only screen 
+    and (min-width: 1024px) 
+    and (max-width: 1439px) {
+
+
+    /* header  */
+    .header {
+        height: 48px;
+    }
+
+    /* out navigation  */
+     .list-item {
+        height: 48px;
+    }
+
+    .list-item-link {
+        height: 48px;
+    }
+
+    .logo .list-item-link svg {
+        width: 18px;
+        height: 48px;
+    }
+
+    .bag .list-item-link svg {
+        width: 18px;
+        height: 48px;
+    }
+}
+
+
+/* mobile  */
+@media only screen 
+    and (min-width: 0) 
+    and (max-width: 1023px) {
+    
+    /* header  */
+    .header {
+        height: 48px;
+    }
+
+    /* out navigation  */
+    .list-item {
+        height: 48px;
+    }
+
+    .list-item-link {
+        height: 48px;
+    }
+
+    .logo .list-item-link svg {
+        width: 18px;
+        height: 48px;
+    }
+
+    .bag .list-item-link svg {
+        width: 18px;
+        height: 48px;
+    }
+
+    /* burger  */
+    .burger {
+        display: block;
+        padding: 9px 0;
+    }
+
+    .menu,
+    .search {
+        display: none;
+    }
+
+
+
+    /* ACTIVE  */
+    .activeBurger .header {
+        height: 100vh;
+        /* min-height: 400px; */
+    }
+
+    .activeBurger .nav {
+        display: block;
+    }
+
+    .activeBurger .burger-lines {
+        transform: rotate(45deg) translate(-30%, 0);/*поворот и сдвиг элемента*/
+        left: 10px;
+    } 
+    .activeBurger .burger-lines:before {
+        transform: rotate(-90deg) translate(-40%, 0);
+    }   
+}
